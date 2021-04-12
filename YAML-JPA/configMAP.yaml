@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: swe645-restAPI-config
+  name: swe645-restapi-config
 data:
   config.json: |
     {
