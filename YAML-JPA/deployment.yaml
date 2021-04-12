@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swe645-restAPI-deploy
+  name: swe645-restapi-deploy
   labels:
-    app: swe645-restAPI-deploy
+    app: swe645-restapi-deploy
     test: test
 #   annotations:
 #     fluxcd.io/tag.example-app: semver:~1.0
@@ -12,7 +12,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: swe645-restAPI-deploy
+      app: swe645-restapi-deploy
   replicas: 2
   strategy:
     type: RollingUpdate
@@ -22,10 +22,10 @@ spec:
   template:
     metadata:
       labels:
-        app: swe645-restAPI-deploy
+        app: swe645-restapi-deploy
     spec:
       containers:
-      - name: swe645-restAPI-deploy
+      - name: swe645-restapi-deploy
         image: ganeshmandava1247889/rest_api_provider:latest
         imagePullPolicy: Always
         ports:
