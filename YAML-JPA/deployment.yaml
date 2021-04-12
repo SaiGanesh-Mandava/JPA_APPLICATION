@@ -28,7 +28,5 @@ spec:
       - name: swe645-restapi-deploy
         image: ganeshmandava1247889/rest_api_provider:latest
         imagePullPolicy: Always
-        ports:
-        - containerPort: 8080
 
 
