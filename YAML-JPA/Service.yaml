@@ -11,4 +11,4 @@ spec:
   ports:
     - protocol: TCP
       name: rest
-      port: 80
+      port: 8080
