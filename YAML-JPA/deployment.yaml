@@ -29,7 +29,7 @@ spec:
         image: ganeshmandava1247889/rest_api_provider:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         
 
 
