@@ -13,7 +13,7 @@ spec:
   selector:
     matchLabels:
       app: rest-app
-  replicas: 3
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
