@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swe645-restapi-deploy
+  name: rest-deploy
   labels:
-    app: swe645-restapi-deploy
+    app: rest-app
     test: test
 #   annotations:
 #     fluxcd.io/tag.example-app: semver:~1.0
@@ -12,8 +12,8 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: swe645-restapi-deploy
-  replicas: 1
+      app: rest-app
+  replicas: 3
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -22,14 +22,24 @@ spec:
   template:
     metadata:
       labels:
-        app: swe645-restapi-deploy
+        app: rest-app
     spec:
       containers:
-      - name: swe645-restapi-deploy
-        image: ganeshmandava1247889/rest_api_provider:latest
+      - name: rest-app
+        image: ganeshmandava1247889/webserver:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
-        
-
-
+        - containerPort: 8080
+        # livenessProbe:
+        #   httpGet:
+        #     path: /status
+        #     port: 5000
+        #   initialDelaySeconds: 3
+        #   periodSeconds: 3
+#         resources:
+#           requests:
+#             memory: "64Mi"
+#             cpu: "50m"
+#           limits:
+#             memory: "256Mi"
+#             cpu: "500m"
