@@ -10,6 +10,7 @@ spec:
     app: swe645-restapi-app
   ports:
     - protocol: TCP
-      name: rest
-      port: 8080
+      name: http
+      port: 80
+      targetPort: 8080
       
