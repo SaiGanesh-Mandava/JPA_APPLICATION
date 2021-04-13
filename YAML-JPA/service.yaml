@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rest-service
+  name: rest1-service
   labels:
-    app: rest-app
+    app: rest1-app
 spec:
   type: LoadBalancer
   selector:
-    app: rest-app
+    app: rest1-app
   ports:
     - protocol: TCP
       name: http

@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rest-deploy
+  name: rest1-deploy
   labels:
-    app: rest-app
+    app: rest1-app
     test: test
 #   annotations:
 #     fluxcd.io/tag.example-app: semver:~1.0
@@ -12,7 +12,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: rest-app
+      app: rest1-app
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -22,11 +22,11 @@ spec:
   template:
     metadata:
       labels:
-        app: rest-app
+        app: rest1-app
     spec:
       containers:
-      - name: rest-app
-        image: ganeshmandava1247889/rest_api_provider:latest
+      - name: rest1-app
+        image: ganeshmandava1247889/rest_provider_extra_credit:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
